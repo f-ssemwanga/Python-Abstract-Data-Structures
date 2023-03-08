@@ -1,0 +1,57 @@
+Task 1: 
+	- Create a Node class passing the following parameters
+	To the constructor method
+	(self, data =None)
+	- Initialise instance variables
+		self.data to data
+		self.next to None
+
+Task 2:  create the linked list class passing self to the constructor
+	- Initialise the head to an instance of the Node class
+
+Task 3: Create methods to perform operations on the list
+
+	a) Create an append method which takes  (self, data)
+		○ Create a new node
+		○ Set the current node to the head node
+		○ Loop until you reach the end of the list  i.e. the next node = None
+		○ Add new node by setting the next node to the new node.
+	b) Create getter method to return the length of the list takes (self)
+		○ Create a variable to hold current node and set it to point to the head
+		○ Create a variable to hold total nodes visited
+		○ Loop over the list will you reach the last node
+			§ Increment the total after each node
+			§ Set the current node to the next node
+		○ Return the total nodes visited
+	c) Create a method to display the list -takes (self)
+	
+		○ Create an empty list to store the elements as they are being visited
+		○ Create a variable to hold the current node, set it to the head node
+		○ Loop over  till you reach the end of the list
+			§ Set the current node to the next node
+			§ Append the current data to the list of visited elements
+		○ Print the list
+	Create an extractor method to remove an item from the list given its index 
+	Takes (self, index to remove)
+		○ Check that the index given is in the range of the list
+			§ If index is not in the range of the list 
+				□ Print an appropriate error message
+			§ Create a variable to store the current index which should be the 0 
+			§ Set the current node to the head node
+			§ Loop over the list (e.g. while True:)
+				□ Set current node to the next node
+				□ If current index is the same as the index we are looking for
+					® Return data in the current node
+				□ Else
+					® Increment the current index by 1
+			
+
+Test your code by writing code which answers the following questions:
+	1. Create an instance of the linked list
+	2. Append the following data to the linked list
+	Positions = [33,43,44,22,56]
+	
+	3. Call the display method on the linked list in 1  above to show data in the list
+	4. Print  the element  at the 3rd index
+	5. Write a method to search for an item in the list
+Add add snips of your code  to the right of this task
