@@ -32,7 +32,14 @@ class LinkedList():
             current = current.next
             visitedElements.append(current.data)
         print(visitedElements)
- 
+    def length(self):
+        #useful function for finding how large the data structure is
+        current = self.head # starting at the node pointer
+        total = 0 # counts nodes encountered
+        while current.next != None:
+            total +=1
+            current = current.next
+        return total
         
         
     
@@ -43,3 +50,4 @@ myList.display()
 myList.appendFunc(5)
 myList.appendFunc(22)
 myList.display()
+print(f'linked list size is {myList.length()}')
