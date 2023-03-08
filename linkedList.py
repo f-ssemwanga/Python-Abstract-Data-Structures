@@ -56,6 +56,27 @@ class LinkedList():
             if current_index == index:
                 return current_node.data
             current_index +=1
+    def eraseItem(self, index):
+        #check to make sure the index provided is not out of range
+        #not longer than length of the list
+        if index >= self.length():
+            print("Error: 'Given index was out of range'")
+            return None
+        #begin iteration
+        current_index = 0
+        current_node = self.head
+        while True:
+            #keep a record of the current node so you can reposition the pointers after erage
+            last_node = current_node
+            current_node = current_node.next
+            #check we are at the index provided by the user
+            #i.e. index at which to delete
+            if current_index == index:
+                #no need to delete just reposition the pointers
+                last_node.next = current_node.next # you have effectively erased the current node
+                return
+            current_index +=1
+            
         
     
         
@@ -68,3 +89,8 @@ myList.display()
 print(f'linked list size is {myList.length()}')
 index = int(input('Enter index of element to find: '))
 print(f' The element at index {index} is {myList.getElement(index)}')
+
+index = int(input('Enter index of element to delete: '))
+print(f' The element at index {index} is deleted')
+
+myList.display()
