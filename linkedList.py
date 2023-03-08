@@ -40,7 +40,22 @@ class LinkedList():
             total +=1
             current = current.next
         return total
-        
+    def getElement(self, index):
+        #extractor function for pulling out data items
+        #take index to extract from as an argument
+        #it is worth checking first whether the passed index is not out of range
+        if index >= self.length():
+            print("Error: 'Given index was out of range'")
+            return None
+        current_index = 0
+        current_node = self.head
+        while True:
+            # as by now we are sure the index is in range
+            #This look i guaranteed to terminate
+            current_node = current_node.next
+            if current_index == index:
+                return current_node.data
+            current_index +=1
         
     
         
@@ -51,3 +66,5 @@ myList.appendFunc(5)
 myList.appendFunc(22)
 myList.display()
 print(f'linked list size is {myList.length()}')
+index = int(input('Enter index of element to find: '))
+print(f' The element at index {index} is {myList.getElement(index)}')
