@@ -26,12 +26,12 @@ class LinkedList():
         
     def display(self):
         #helper function to display the contents of the linked list
-        visitedElements = [] # store elements in the list
+        listElements = [] # store elements in the list
         current = self.head # traverse the list starting with the head node
         while current.next !=None:
             current = current.next
-            visitedElements.append(current.data)
-        print(visitedElements)
+            listElements.append(current.data)
+        print(listElements)
     def length(self):
         #useful function for finding how large the data structure is
         current = self.head # starting at the node pointer
@@ -56,41 +56,38 @@ class LinkedList():
             if current_index == index:
                 return current_node.data
             current_index +=1
-    def eraseItem(self, index):
-        #check to make sure the index provided is not out of range
-        #not longer than length of the list
-        if index >= self.length():
-            print("Error: 'Given index was out of range'")
+    def eraseItem(self):
+        index = int(input('Enter the index of the item to remove: '))
+        #check of given index is valid
+        if index >= self.length() or index <0:
+            print('Error: Given index is out of range')
             return None
-        #begin iteration
-        current_index = 0
-        current_node = self.head
-        while True:
-            #keep a record of the current node so you can reposition the pointers after erage
-            last_node = current_node
-            current_node = current_node.next
-            #check we are at the index provided by the user
-            #i.e. index at which to delete
-            if current_index == index:
-                #no need to delete just reposition the pointers
-                last_node.next = current_node.next # you have effectively erased the current node
-                return
-            current_index +=1
-            
-        
+        #if item to be removed is the head node
+        elif index ==0:
+            self.head = self.head.next
+        else:
+            previous = None
+            current_node =self.head
+            i =0 #starting index for iterating over the list
+            #traverse the list to find node at given index
+            while i <index:
+                previous = current_node
+                current_node = current_node.next
+                i +=1
+            #update the pointers to remove the node at the given index
+            previous.next = current_node.next
+            current_node.next = None   
+                
     
-        
-
 myList = LinkedList()
 myList.display()
 myList.appendFunc(5)
 myList.appendFunc(22)
+myList.appendFunc(28)
 myList.display()
 print(f'linked list size is {myList.length()}')
 index = int(input('Enter index of element to find: '))
 print(f' The element at index {index} is {myList.getElement(index)}')
-
-index = int(input('Enter index of element to delete: '))
-print(f' The element at index {index} is deleted')
-
+myList.eraseItem()
 myList.display()
+
