@@ -23,3 +23,16 @@ class Stack:
         else:
             removedElement = self.stack.pop()
             return f'removed: {removedElement}'
+    def getStackSize(self):
+        #returns the size of the stack
+        return len(self.stack)
+    def displayStack(self):
+        #displays contents of the stack
+        print(self.stack)
+    
+#Testing 
+myStack = Stack()
+for element in [5,6,9,6,7,12]:
+    myStack.push(element)
+print(f'There are {myStack.getStackSize()} elements in the stack')
+myStack.displayStack()
