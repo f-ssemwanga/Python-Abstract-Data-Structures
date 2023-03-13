@@ -36,3 +36,10 @@ for element in [5,6,9,6,7,12]:
     myStack.push(element)
 print(f'There are {myStack.getStackSize()} elements in the stack')
 myStack.displayStack()
+print(f'The peek element in the stack is: {myStack.peek()}')
+for i in range(3):
+    myStack.dequeue()
+
+print(f'The peek element in the stack is: {myStack.peek()}')
+myStack.displayStack()
+
