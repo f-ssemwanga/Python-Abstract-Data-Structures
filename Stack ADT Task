@@ -1,0 +1,35 @@
+Use the code below to implement the stack and perform the tasks underneath.  Add evidence of your coded  solution below this code.
+
+#Stack implementation using a list in OOP
+
+class Stack:
+
+    #Constructor creates a list
+    def __init__(self):
+        self.stack = list()
+
+    #Adding elements to stack
+    def push(self,data):
+        #Checking to avoid duplicate entries
+        if data not in self.stack:
+            self.stack.append(data)
+            return True
+        return False
+
+    #Removing last element from the stack
+    def pop(self):
+        if len(self.stack)<=0:
+            return ("Stack Empty!")
+        return self.stack.pop()
+
+    #Getting the size of the stack
+    def size(self):
+        return len(self.stack)
+
+#Tasks:
+    #Create an instance of the stack
+    #push these values in the correct order [5,6,9,6,3]
+    #perform an operation to check the size of the stack
+    #perform 4 consecutive pop operations
+    # perform an operation to check the size
+    # Perform one more pop operation
