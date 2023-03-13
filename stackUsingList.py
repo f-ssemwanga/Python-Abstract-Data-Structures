@@ -13,4 +13,11 @@ print(stack)
 #get the size of the stack
 print(f'The stack has {len(stack)} elements')
 
+print(f'The peek element is {stack[-1]}')
+
+#perform 2 pop operations
+stack.pop()
+stack.pop()
+print(f'The peek element after 2 dequeue operations is {stack[-1]}')
+
 
