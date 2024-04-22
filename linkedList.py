@@ -51,7 +51,7 @@ class LinkedList():
         current_node = self.head
         while True:
             # as by now we are sure the index is in range
-            #This look i guaranteed to terminate
+            #This loop is guaranteed to terminate
             current_node = current_node.next
             if current_index == index:
                 return current_node.data
