@@ -16,7 +16,7 @@ class LinkedList():
         #this will add a new data point to the list
         new_node = Node(data)
         current = self.head #as there are no nodes the current node is the head node
-        #interate over notes in the list until we find the next node of curr which is None
+        #interate over nodes in the list until we find the next node of curr which is None
         #we then insert the new node at this new location
         while current.next != None:
             #traverse through the list
