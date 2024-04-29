@@ -11,20 +11,17 @@ class Stack:
     #Adding elements to stack
     def push(self,data):
         #Checking to avoid duplicate entries
-        if data not in self.stack:
-            self.stack.append(data)
-            return True
-        return False
+        #append the new data Item to the stack
+        #return True if the append was successful otherwise return False
 
-    #Removing last element from the stack
+    #Removing the last element from the stack
     def pop(self):
-        if len(self.stack)<=0:
-            return ("Stack Empty!")
-        return self.stack.pop()
-
+        #check if the stack is not empty before removing an item
+        #return "stack is empty" or return the removed item
     #Getting the size of the stack
     def size(self):
-        return len(self.stack)
+        #return the length of the stack
+    #Add an extra method to display the contents of the stack
 
 #Tasks:
     #Create an instance of the stack
