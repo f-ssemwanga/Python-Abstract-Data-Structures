@@ -24,3 +24,23 @@ class Queue:
             return True
         else:
             return False
+
+    def enqueue(self, item):
+        """adds an item to the queue"""
+        if self.isFull():
+            return False
+        elif self.isEmpty():
+            self.rear = self.front = 0
+            self.items.insert(self.rear, item)
+        else:
+            self.rear += 1
+            self.items.insert(self.rear, item)
+
+    def displayQueue(self):
+        """displays the contents of the queue"""
+        if self.isEmpty():
+            print(f"Queue Items: {self.items}")
+        else:
+            print(f"Queue Front: {self.items [self.front]}")
+            print(f"Queue Rear: {self.items[self.rear]}")
+            print(f"Queue Items: {self.items}")
