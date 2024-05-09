@@ -44,3 +44,16 @@ class Queue:
             print(f"Queue Front: {self.items [self.front]}")
             print(f"Queue Rear: {self.items[self.rear]}")
             print(f"Queue Items: {self.items}")
+
+    def dequeue(self):
+        # remove item from a queue
+        if self.isEmpty():
+            return -1
+        elif self.rear == 0:
+            self.removedItem = self.items.pop(self.rear)
+            self.rear = self.front = -1
+            return self.removedItem
+        else:
+            self.removedItem = self.items.pop(self.rear)
+            self.rear -= 1
+            return self.removedItem
